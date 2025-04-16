@@ -21,6 +21,7 @@ body {
   break-inside: avoid;
   position: relative;
   height: 250px;  /* Fixed height for all photo containers */
+  overflow: hidden;  /* Hide overflow */
 }
 
 .photo-container img.photo {
@@ -32,11 +33,6 @@ body {
   padding: 0;
 }
 
-.archive-icon:hover + .story {
-  display: block;
-}
-
-/* Archive icon */
 .archive-icon {
   position: absolute;
   bottom: 8px;
@@ -48,11 +44,11 @@ body {
   opacity: 0.9;
 }
 
-/* Story styles */
+/* Story box positioning */
 .story {
   display: none;
   position: absolute;
-  bottom: 35px;  /* Position it above the icon */
+  bottom: 40px;  /* Slightly above the icon */
   left: 50%;
   transform: translateX(-50%);  /* Center it horizontally */
   background: rgba(255, 255, 255, 0.85);  /* White with transparency */
@@ -61,7 +57,7 @@ body {
   font-size: 0.8em;
   z-index: 1;
   width: 200px;  /* Set a fixed width to control the box size */
-  max-height: 100px;  /* Limit the height of the story box */
+  max-height: 120px;  /* Set maximum height */
   overflow-y: auto;  /* Make it scrollable if the content overflows */
   border-radius: 8px;  /* Rounded corners for the box */
   box-sizing: border-box;
