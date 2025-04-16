@@ -6,38 +6,47 @@ body {
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  justify-content: center;
-  align-items: flex-start;
+  column-count: 4;
+  column-gap: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .photo-container {
-  position: relative;
+  display: inline-block;
+  width: 100%;
   margin: 0;
   padding: 0;
-  flex: 0 1 auto;
+  break-inside: avoid;
+  position: relative;
 }
 
 .photo-container img.photo {
-  width: 200px;
+  width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
   border-radius: 0;
+  margin: 0;
+  padding: 0;
 }
+
+.archive-icon:hover + .story {
+  display: block;
+}
+
 
 /* Archive icon */
 .archive-icon {
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 20px;
-  height: 20px;
-  opacity: 0.8;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
   z-index: 2;
+  opacity: 0.9;
 }
 
 /* Story styles */
