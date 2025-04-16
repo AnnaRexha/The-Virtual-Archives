@@ -52,19 +52,11 @@ body {
 .story {
   display: none;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.85);
-  color: white;
+  bottom: 35px;  /* Position it above the icon */
+  left: 50%;
+  transform: translateX(-50%);  /* Center it horizontally */
+  background: rgba(255, 255, 255, 0.85);  /* White with transparency */
+  color: black;
   padding: 10px;
   font-size: 0.8em;
-  z-index: 1;
-  max-height: 40%;  /* Limits the height of the story box */
-  overflow-y: auto;  /* Scrollable if content overflows */
-  box-sizing: border-box;
-}
-
-.photo-container:hover .story {
-  display: block;
-}
+  z-index:
