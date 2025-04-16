@@ -20,14 +20,14 @@ body {
   padding: 0;
   break-inside: avoid;
   position: relative;
+  height: 250px;  /* Fixed height for all photo containers */
 }
 
 .photo-container img.photo {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;  /* Ensures images are resized to fit within the container */
   display: block;
-  object-fit: cover;
-  border-radius: 0;
   margin: 0;
   padding: 0;
 }
@@ -59,4 +59,15 @@ body {
   color: black;
   padding: 10px;
   font-size: 0.8em;
-  z-index:
+  z-index: 1;
+  width: 200px;  /* Set a fixed width to control the box size */
+  max-height: 100px;  /* Limit the height of the story box */
+  overflow-y: auto;  /* Make it scrollable if the content overflows */
+  border-radius: 8px;  /* Rounded corners for the box */
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.photo-container:hover .story {
+  display: block;
+}
