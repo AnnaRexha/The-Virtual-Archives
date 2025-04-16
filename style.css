@@ -7,7 +7,7 @@ body {
 
 .grid {
   column-count: 4;
-  column-gap: 0;
+  column-gap: 15px;  /* Add space between columns */
   width: 100%;
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
 .photo-container {
   display: inline-block;
   width: 100%;
-  margin: 0;
+  margin-bottom: 15px;  /* Space between rows */
   padding: 0;
   break-inside: avoid;
   position: relative;
@@ -36,7 +36,6 @@ body {
   display: block;
 }
 
-
 /* Archive icon */
 .archive-icon {
   position: absolute;
@@ -52,17 +51,3 @@ body {
 /* Story styles */
 .story {
   display: none;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.85);
-  color: white;
-  padding: 10px;
-  font-size: 0.8em;
-  z-index: 1;
-}
-
-.photo-container:hover .story {
-  display: block;
-}
