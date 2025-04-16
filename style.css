@@ -1,33 +1,35 @@
 body {
-  margin: 0;
   background-color: black;
+  margin: 0;
+  padding: 0;
   font-family: sans-serif;
-  color: white;
 }
 
-.gallery {
-  column-count: 3; /* Adjust the number of columns as needed */
-  column-gap: 0;
-  padding: 0;
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .photo-container {
   position: relative;
-  display: inline-block;
   margin: 0;
   padding: 0;
-  width: 100%;
-  break-inside: avoid;
+  flex: 0 1 auto;
 }
 
 .photo-container img.photo {
-  width: 100%;
+  width: 200px;
   height: auto;
   display: block;
+  object-fit: cover;
   border-radius: 0;
 }
 
-.envelope-icon {
+/* Archive icon */
+.archive-icon {
   position: absolute;
   bottom: 5px;
   right: 5px;
@@ -38,10 +40,7 @@ body {
   z-index: 2;
 }
 
-.envelope-icon:hover {
-  transform: scale(1.2);
-}
-
+/* Story styles */
 .story {
   display: none;
   position: absolute;
@@ -49,12 +48,12 @@ body {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.85);
+  color: white;
   padding: 10px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   z-index: 1;
 }
 
-.photo-container:hover .story,
-.photo-container.show-story .story {
+.photo-container:hover .story {
   display: block;
 }
