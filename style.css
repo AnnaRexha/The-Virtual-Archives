@@ -1,32 +1,46 @@
+body {
+  margin: 0;
+  background-color: black;
+  font-family: sans-serif;
+  color: white;
+}
+
+.gallery {
+  column-count: 3; /* Adjust the number of columns as needed */
+  column-gap: 0;
+  padding: 0;
+}
+
 .photo-container {
   position: relative;
   display: inline-block;
   margin: 0;
   padding: 0;
+  width: 100%;
+  break-inside: avoid;
 }
 
 .photo-container img.photo {
-  display: block;
-  width: auto;
+  width: 100%;
   height: auto;
+  display: block;
   border-radius: 0;
-  max-width: 100%;
 }
 
 .envelope-icon {
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 20px;
-  height: 20px;
-  opacity: 0.8;
+  bottom: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  opacity: 0.8;
+  transition: transform 0.2s;
   z-index: 2;
 }
 
-/* NEW: Hovering the icon also shows the story */
-.photo-container:hover .enveloppe-icon:hover + .story {
-  display: block;
+.envelope-icon:hover {
+  transform: scale(1.2);
 }
 
 .story {
@@ -35,14 +49,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.85);
   padding: 10px;
-  color: white;
   font-size: 0.9em;
   z-index: 1;
 }
 
-/* If the photo-container has class 'show-story', show the story */
+.photo-container:hover .story,
 .photo-container.show-story .story {
   display: block;
 }
