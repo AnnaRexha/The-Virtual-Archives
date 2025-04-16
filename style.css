@@ -7,7 +7,7 @@ body {
 
 .grid {
   column-count: 4;
-  column-gap: 15px;  /* Add space between columns */
+  column-gap: 15px;  /* Space between columns */
   width: 100%;
   margin: 0;
   padding: 0;
@@ -60,8 +60,9 @@ body {
   padding: 10px;
   font-size: 0.8em;
   z-index: 1;
-  max-height: 40%;  /* Adjust based on the image size */
-  overflow-y: auto;  /* Add vertical scrolling if content overflows */
+  max-height: 40%;  /* Limits the height of the story box */
+  overflow-y: auto;  /* Scrollable if content overflows */
+  box-sizing: border-box;
 }
 
 .photo-container:hover .story {
