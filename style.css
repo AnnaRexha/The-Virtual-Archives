@@ -6,22 +6,20 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 6px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  padding: 30px;
   justify-content: center;
 }
 
 .image-container {
   position: relative;
-  width: auto;
-  height: auto;
-  background-image: url('thread-background.png'); /* Optional: for thread feel */
+  width: 100%;
+  background-image: url('thread.png'); /* Optional: red thread look */
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
-  border: 2px solid #c90000; /* Red string look */
-  border-radius: 6px;
+  border: 2px solid #c90000;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -29,7 +27,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
+  object-fit: contain; /* keep natural shape */
 }
 
 .story-box {
@@ -39,30 +37,5 @@ body {
   right: 10px;
   background-color: rgba(255, 255, 255, 0.85);
   padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  font-size: 14px;
-  line-height: 1.4;
-  display: none;
-  z-index: 10;
-  max-height: 90%;
-  overflow-y: auto;
-  .story-box {
- }
-
-.image-container:hover .story-box {
-  display: block;
-}
-
-@media (max-width: 800px) {
-  .image-container {
-    width: 45%;
-    height: auto;
-  }
-}
-
-@media (max-width: 500px) {
-  .image-container {
-    width: 100%;
-  }
-}
+  border-radius: 12px;
+  box-shadow:
