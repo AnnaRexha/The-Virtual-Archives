@@ -36,11 +36,11 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   
   font-family: 'Georgia', serif;
-  font-size: 15px;       / "Standardized font size" /
-  line-height: 1.5;       / "Consistent line spacing" /
-  text-align: left;       / "Optional: keep alignment consistent" /
-  overflow: hidden;       / "Prevent overflow" /
-  word-break: break-word; / "Wrap long words" /
+  font-size: 15px;       
+  line-height: 1.5;       
+  text-align: left;      
+  overflow: hidden;       
+  word-break: break-word; 
 
   display: none;
   z-index: 10;
