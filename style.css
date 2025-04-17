@@ -7,28 +7,29 @@ body {
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
   justify-content: center;
-  padding: 20px;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 10px;
 }
 
 .image-container {
   position: relative;
-  flex: 0 0 calc(33.333% - 10px);
-  box-sizing: border-box;
-  aspect-ratio: 1 / 1;
-  background-image: url(thread.png); / Make sure this matches the PNG filename in your repo /
+  width: 250px;
+  height: 250px;
+  margin: 5px;
+  background-image: url('thread.png'); / Rename as needed /
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
 }
 
+
 .image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .story-box {
