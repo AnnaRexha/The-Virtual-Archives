@@ -47,13 +47,7 @@ body {
   max-height: 90%;
   overflow-y: auto;
   .story-box {
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.image-container:hover .story-box {
-  opacity: 1;
-}
+ }
 
 .image-container:hover .story-box {
   display: block;
