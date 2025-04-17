@@ -2,8 +2,9 @@ body {
   font-family: 'Georgia', serif;
   background-color: #fffaf7;
   padding: 40px;
-  text-align: center;
+  margin: 0;
   color: #333;
+  text-align: center;
 }
 
 h1 {
@@ -14,36 +15,39 @@ h1 {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 10px;
   justify-items: center;
 }
 
 .photo {
   position: relative;
-  border: 2px dashed red; /* red string-like outline */
-  padding: 4px;
+  border: 3px dashed red; /* stitched border */
   overflow: hidden;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  background-color: white;
 }
 
 .photo img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
 .story {
   position: absolute;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.9);
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
   color: #000;
   font-size: 0.9rem;
   padding: 10px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  width: 100%;
-  text-align: left;
-  box-sizing: border-box;
+  pointer-events: none;
 }
 
 .photo:hover .story {
