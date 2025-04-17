@@ -33,23 +33,23 @@ body {
 
 .story-box {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  padding: 12px;
   background-color: rgba(255, 255, 255, 0.85);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  max-width: 250px;
+  z-index: 1000;
   display: none;
-  z-index: 10;
+  pointer-events: none;
   font-size: 14px;
   line-height: 1.4;
+  transform: translateY(-10px);
 }
 
-.image-container:hover .story-box,
-.image-container:focus-within .story-box {
+.image-container:hover + .story-box {
   display: block;
 }
+
 
 @media (max-width: 800px) {
   .image-container {
