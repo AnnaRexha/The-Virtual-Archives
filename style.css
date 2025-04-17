@@ -16,12 +16,12 @@ body {
   position: relative;
   width: 250px; /about 10cm/
   height: 250px;
-  background-image: url('thread.png'); / optional, can be a red thread texture /
+  background-image: url(thread.png); / optional, can be a red thread texture /
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
-  border: 2px solid #c90000; / subtle red border as placeholder for thread /
+  border: none
   border-radius: 8px;
 }
 
