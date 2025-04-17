@@ -34,11 +34,18 @@ body {
   padding: 12px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  font-size: 14px;
-  line-height: 1.4;
+  
+  font-family: 'Georgia', serif;
+  font-size: 15px;       /* Standardized font size */
+  line-height: 1.5;       /* Consistent line spacing */
+  text-align: left;       /* Optional: keep alignment consistent */
+  overflow: hidden;       /* Prevent overflow */
+  word-break: break-word; /* Wrap long words */
+
   display: none;
   z-index: 10;
 }
+
 
 .image-container:hover .story-box {
   display: block;
