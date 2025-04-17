@@ -9,25 +9,24 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 10px;
   padding: 30px;
-  justify-content: center;
 }
 
 .image-container {
   position: relative;
   width: 100%;
-  background-image: url('thread.png'); /* Optional: red thread look */
+  background-image: url('thread.png'); /* optional */
   background-size: cover;
   background-position: center;
   border: 2px solid #c90000;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .image-container img {
   width: 100%;
   height: auto;
+  object-fit: contain;
   display: block;
-  object-fit: contain; /* keep natural shape */
 }
 
 .story-box {
