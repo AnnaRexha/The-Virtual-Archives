@@ -1,71 +1,51 @@
 body {
-  background-color: black;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  font-family: 'Georgia', serif;
+  background-color: #fffaf7;
+  padding: 40px;
+  text-align: center;
+  color: #333;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px; /* space between images */
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: normal;
 }
 
-.photo-container {
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  justify-items: center;
+}
+
+.photo {
   position: relative;
-  width: 250px;
-  height: 250px;
-  background-color: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 2px dashed red; /* red string-like outline */
+  padding: 4px;
   overflow: hidden;
 }
 
-.photo-container img.photo {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+.photo img {
+  width: 100%;
+  height: auto;
   display: block;
 }
 
-.archive-icon {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  z-index: 2;
-  opacity: 0.9;
-}
-
-/* Show .story on hover of .archive-icon */
-.archive-icon:hover + .story {
-  display: block;
-}
-
-/* Story box */
 .story {
-  display: none;
   position: absolute;
-  top: 100%; /* place below the image */
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;
   background: rgba(255, 255, 255, 0.9);
-  color: black;
+  color: #000;
+  font-size: 0.9rem;
   padding: 10px;
-  font-size: 0.8em;
-  z-index: 3;
-  width: 220px;
-  max-height: 150px;
-  overflow-y: auto;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  text-align: left;
   box-sizing: border-box;
-  text-align: center;
-  white-space: normal;
+}
+
+.photo:hover .story {
+  opacity: 1;
 }
