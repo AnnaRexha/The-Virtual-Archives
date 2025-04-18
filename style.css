@@ -11,12 +11,18 @@ body {
   padding: 20px;
 }
 
+@media (max-width: 600px) {
+  .gallery {
+    column-count: 2; /* 2 columns for smaller screens */
+  }
+}
+
 .image-container {
   display: inline-block;
-  margin: 0 0 10px;
   width: 100%;
   break-inside: avoid;
   position: relative;
+  margin-bottom: 20px; /* Combined margin from both places */
 }
 
 .image-container img {
@@ -26,19 +32,13 @@ body {
 }
 
 .story-box {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
-  background-color: rgba(255, 255, 255, 0.65); /* More transparent */
-  padding: 12px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  font-size: 14px;
-  line-height: 1.4;
-  display: none;
-  z-index: 10;
-  cursor: pointer;
+  position: sticky;
+  top: 10px; /* Sticks 10px from the top */
+  background-color: rgba(255, 255, 255, 0.8); /* Optional for readability */
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  z-index: 10; /* Keeps it above other content */
 }
 
 .story-text {
@@ -53,6 +53,7 @@ body {
 .image-container:hover .story-box {
   display: block;
 }
+
 .modal {
   display: none;
   position: fixed;
