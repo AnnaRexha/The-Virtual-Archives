@@ -88,7 +88,6 @@ Alors aujourd’hui, je redonne une place à la çorbë. Je me redonne une place
     </div>
     
   </div>
-  <!-- Your HTML content above -->
 
 <!-- MODAL HTML -->
 <div id="storyModal" class="modal">
@@ -98,38 +97,41 @@ Alors aujourd’hui, je redonne une place à la çorbë. Je me redonne une place
   </div>
 </div>
 
-<!-- JAVASCRIPT GOES HERE -->
-<script>
-  // Show story box on click (for mobile)
-  document.querySelectorAll('.image-container').forEach(container => {
-    container.addEventListener('click', () => {
-      const storyBox = container.querySelector('.story-box');
-      storyBox.style.display = 'block';
-    });
-  });
+document.querySelectorAll('.image-container').forEach(container => {
+  const storyBox = container.querySelector('.story-box');
+  const storyText = storyBox.querySelector('.story-text');
+  const continueCaption = document.createElement('span');
+  continueCaption.textContent = "Continue...";
+  continueCaption.classList.add('continue-caption');
+  
+  // Add the "Continue" caption if the story is longer
+  if (storyText.scrollHeight > storyText.clientHeight) {
+    storyText.appendChild(continueCaption);
+  }
 
-  // Open modal when story box is clicked
-  document.querySelectorAll('.story-box').forEach(box => {
-    box.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent parent container toggle
-      const fullText = box.innerHTML;
-      document.getElementById('modalText').innerHTML = fullText;
-      document.getElementById('storyModal').style.display = 'block';
-    });
-  });
-
-  // Close modal on "X"
-  document.querySelector('.modal .close').addEventListener('click', () => {
-    document.getElementById('storyModal').style.display = 'none';
-  });
-
-  // Optional: close when clicking outside modal
-  window.onclick = function(event) {
-    const modal = document.getElementById('storyModal');
-    if (event.target === modal) {
-      modal.style.display = "none";
+  // When the story box is clicked, toggle the "clicked" class
+  continueCaption.addEventListener('click', () => {
+    container.classList.toggle('clicked');
+    if (container.classList.contains('clicked')) {
+      continueCaption.textContent = "Show Less"; // Show the 'show less' text when expanded
+    } else {
+      continueCaption.textContent = "Continue..."; // Revert back to 'continue' when collapsed
     }
-  };
+  });
+
+  // Show story box when hovered
+  container.addEventListener('mouseover', () => {
+    storyBox.style.display = 'block';
+  });
+  
+  container.addEventListener('mouseout', () => {
+    if (!container.classList.contains('clicked')) {
+      storyBox.style.display = 'none';
+    }
+  });
+});
+
+  
 </script>
 
 </body>
