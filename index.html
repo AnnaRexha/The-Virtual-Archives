@@ -88,5 +88,49 @@ Alors aujourd’hui, je redonne une place à la çorbë. Je me redonne une place
     </div>
     
   </div>
+  <!-- Your HTML content above -->
+
+<!-- MODAL HTML -->
+<div id="storyModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<!-- JAVASCRIPT GOES HERE -->
+<script>
+  // Show story box on click (for mobile)
+  document.querySelectorAll('.image-container').forEach(container => {
+    container.addEventListener('click', () => {
+      const storyBox = container.querySelector('.story-box');
+      storyBox.style.display = 'block';
+    });
+  });
+
+  // Open modal when story box is clicked
+  document.querySelectorAll('.story-box').forEach(box => {
+    box.addEventListener('click', (e) => {
+      e.stopPropagation(); // prevent parent container toggle
+      const fullText = box.innerHTML;
+      document.getElementById('modalText').innerHTML = fullText;
+      document.getElementById('storyModal').style.display = 'block';
+    });
+  });
+
+  // Close modal on "X"
+  document.querySelector('.modal .close').addEventListener('click', () => {
+    document.getElementById('storyModal').style.display = 'none';
+  });
+
+  // Optional: close when clicking outside modal
+  window.onclick = function(event) {
+    const modal = document.getElementById('storyModal');
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
 </body>
 </html>
