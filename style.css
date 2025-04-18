@@ -41,6 +41,14 @@ body {
   cursor: pointer;
 }
 
+.story-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  position: relative;
+}
+
 /* Show on hover */
 .image-container:hover .story-box {
   display: block;
